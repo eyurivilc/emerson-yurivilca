@@ -1,6 +1,12 @@
 ---
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const canonicalURL = new URL(base, Astro.site);
+const shareImageURL = new URL(
+  `${base}emerson-720.webp`,
+  Astro.site
+);
 const wa=(service='un proyecto')=>`https://wa.me/51942795641?text=${encodeURIComponent(`Hola Emerson, me gustaría cotizar ${service}. ¿Podemos conversar sobre lo que necesito?`)}`;
 const services=[{n:'01',icon:'bolt',name:'Automatización de reportes',text:'Deja de copiar y pegar cada semana. Conecto tus fuentes y preparo flujos para que la información llegue cuando la necesitas.',items:['Integración de Excel, bases de datos y APIs','Procesos ETL con Python y SQL','Reportes programados y documentados'],label:'Quiero automatizar',topic:'la automatización de mis reportes'}, {n:'02',icon:'chart',name:'Análisis de datos',text:'Dale contexto a tus números. Organizo tus datos y construyo indicadores que te ayuden a entender qué pasa y dónde actuar.',items:['Limpieza y preparación de datos','Dashboards en Power BI y Grafana','Indicadores y visualizaciones para decidir'],label:'Quiero entender mis datos',topic:'un análisis de datos'}, {n:'03',icon:'code',name:'Desarrollo web',text:'Una presencia digital a la altura de tu trabajo. Páginas claras, rápidas y pensadas para convertir visitas en conversaciones.',items:['Landing pages y sitios profesionales','Diseño adaptable a móviles','Contacto por WhatsApp y SEO básico'],label:'Quiero mi página web',topic:'una página web'}];
 services.push({n:'04',icon:'globe',name:'Soporte remoto',text:'Cuando una aplicación falla, necesitas recuperar el control. Te ayudo a investigar el problema y definir los siguientes pasos con claridad.',items:['Diagnóstico de aplicaciones, servicios y logs','Revisión de SQL Server y conectividad','Asistencia remota y documentación técnica'],label:'Necesito soporte',topic:'una sesión de soporte remoto'});
@@ -13,8 +19,21 @@ const faqs=[['¿Trabajas con empresas y profesionales independientes?','Sí. Pod
 <title>Emerson Yurivilca | Datos, automatización y desarrollo web</title>
 <meta name="description" content="Automatización de reportes, análisis de datos y páginas web para negocios y profesionales. Emerson Yurivilca, Lima, Perú. Cotiza tu proyecto por WhatsApp."/>
 <meta name="theme-color" content="#101311"/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
-<link rel="canonical" href={Astro.url.origin}/>
-<meta property="og:title" content="Emerson Yurivilca | Tecnología que hace avanzar tu negocio"/><meta property="og:description" content="Datos, automatización y desarrollo web para tu negocio. Conversemos sobre tu próximo proyecto."/><meta property="og:type" content="website"/><meta property="og:locale" content="es_PE"/><meta property="og:image" content={`${Astro.url.origin}/emerson-720.webp`}/>
+<link
+
+  rel="icon"
+
+  href={`${base}favicon.svg`}
+
+  type="image/svg+xml"
+
+/>
+<link rel="canonical" href={canonicalURL.href} />
+<meta property="og:title" content="Emerson Yurivilca | Tecnología que hace avanzar tu negocio"/>
+<meta property="og:description" content="Datos, automatización y desarrollo web para tu negocio. Conversemos sobre tu próximo proyecto."/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="es_PE"/>
+<meta property="og:image" content={shareImageURL.href} />
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
