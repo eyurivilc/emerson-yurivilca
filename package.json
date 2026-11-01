@@ -1,0 +1,1 @@
+{"name":"emerson-yurivilca","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"astro dev --host 0.0.0.0","build":"astro build","preview":"astro preview --host 0.0.0.0"},"dependencies":{"@tailwindcss/vite":"^4.0.0","astro":"^5.0.0","tailwindcss":"^4.0.0"}}
