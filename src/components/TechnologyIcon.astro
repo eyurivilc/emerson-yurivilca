@@ -1,0 +1,40 @@
+---
+import python from "../assets/icons/python.svg?url&no-inline";
+import microsoftsqlserver from "../assets/icons/microsoftsqlserver.svg?url&no-inline";
+import powerbi from "../assets/icons/powerbi.svg?url&no-inline";
+import grafana from "../assets/icons/grafana.svg?url&no-inline";
+import astro from "../assets/icons/astro.svg?url&no-inline";
+import tailwindcss from "../assets/icons/tailwindcss.svg?url&no-inline";
+import chatgpt from "../assets/icons/chatgpt.svg?url&no-inline";
+import claude from "../assets/icons/claude.svg?url&no-inline";
+import googlegemini from "../assets/icons/googlegemini.svg?url&no-inline";
+
+const icons = {
+  python,
+  microsoftsqlserver,
+  powerbi,
+  grafana,
+  astro,
+  tailwindcss,
+  chatgpt,
+  claude,
+  googlegemini,
+};
+interface Props {
+  name: keyof typeof icons;
+  size?: number;
+}
+const { name, size = 22 } = Astro.props;
+---
+
+<img
+  src={icons[name]}
+  width={size}
+  height={size}
+  alt=""
+  aria-hidden="true"
+  loading="lazy"
+  decoding="async"
+  fetchpriority="low"
+  data-brand={name}
+/>

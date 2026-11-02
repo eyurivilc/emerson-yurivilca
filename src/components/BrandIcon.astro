@@ -1,0 +1,21 @@
+---
+import linkedin from "../assets/icons/linkedin.svg";
+import github from "../assets/icons/github.svg";
+import whatsapp from "../assets/icons/whatsapp.svg";
+const icons = { linkedin, github, whatsapp };
+interface Props {
+  name: keyof typeof icons;
+  size?: number;
+}
+const { name, size = 22 } = Astro.props;
+const Svg = icons[name];
+---
+
+<Svg
+  width={size}
+  height={size}
+  fill="currentColor"
+  aria-hidden="true"
+  focusable="false"
+  data-brand={name}
+/>

@@ -1,0 +1,34 @@
+CRÉDITOS DE ICONOS
+
+Los nombres y marcas identifican herramientas y medios de contacto. No implican patrocinio ni afiliación. Las licencias de las colecciones no conceden derechos sobre marcas.
+
+Simple Icons 16.36.0 (contribuidores de Simple Icons): Python, Grafana, Astro, Tailwind CSS, Claude, Google Gemini, WhatsApp y GitHub. Colección CC0-1.0; consultar las condiciones de cada marca y la advertencia incluida en licenses/simple-icons-disclaimer.md.
+Licencia: licenses/simple-icons-CC0.txt
+Fuente: https://github.com/simple-icons/simple-icons/tree/16.36.0/icons
+
+Devicon 2.17.0, Copyright (c) 2015 konpa: SQL Server. Licencia MIT: licenses/devicon-MIT.txt
+Fuente: https://github.com/devicons/devicon/blob/v2.17.0/icons/microsoftsqlserver/microsoftsqlserver-plain.svg
+
+Tabler Icons 3.35.0, Copyright (c) 2020-2025 Paweł Kuna: OpenAI (junto al nombre ChatGPT) y LinkedIn. Licencia MIT: licenses/tabler-MIT.txt
+Fuente: https://github.com/tabler/tabler-icons/tree/v3.35.0/icons
+
+Power BI: Microsoft y colaboradores, CC BY 4.0.
+Fuente: https://github.com/microsoft/PowerBI-Icons/blob/main/SVG/Power-BI.svg
+Licencia: https://creativecommons.org/licenses/by/4.0/ (copia en licenses/powerbi-CC-BY-4.0.txt).
+Cambios: optimización SVG y eliminación de la sombra filtrada; se conservan la geometría y los colores. No se sugiere respaldo por Microsoft.
+
+Cambios generales: metadatos y títulos redundantes eliminados, dimensiones controladas por el componente, colores monocromáticos #c5d3ba en tecnologías/IA, heredados del texto en redes/WhatsApp, salvo Power BI. Sin scripts ni recursos remotos en SVG.
+
+Fuentes individuales:
+python: https://raw.githubusercontent.com/simple-icons/simple-icons/16.36.0/icons/python.svg
+grafana: https://raw.githubusercontent.com/simple-icons/simple-icons/16.36.0/icons/grafana.svg
+astro: https://raw.githubusercontent.com/simple-icons/simple-icons/16.36.0/icons/astro.svg
+tailwindcss: https://raw.githubusercontent.com/simple-icons/simple-icons/16.36.0/icons/tailwindcss.svg
+claude: https://raw.githubusercontent.com/simple-icons/simple-icons/16.36.0/icons/claude.svg
+googlegemini: https://raw.githubusercontent.com/simple-icons/simple-icons/16.36.0/icons/googlegemini.svg
+whatsapp: https://raw.githubusercontent.com/simple-icons/simple-icons/16.36.0/icons/whatsapp.svg
+github: https://raw.githubusercontent.com/simple-icons/simple-icons/16.36.0/icons/github.svg
+microsoftsqlserver: https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/microsoftsqlserver/microsoftsqlserver-plain.svg
+chatgpt: https://raw.githubusercontent.com/tabler/tabler-icons/v3.35.0/icons/outline/brand-openai.svg
+linkedin: https://raw.githubusercontent.com/tabler/tabler-icons/v3.35.0/icons/filled/brand-linkedin.svg
+powerbi: https://raw.githubusercontent.com/microsoft/PowerBI-Icons/main/SVG/Power-BI.svg
