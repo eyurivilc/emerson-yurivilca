@@ -1,0 +1,6 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
+  "name": "emerson-yurivilca",
+  "compatibility_date": "2026-11-21",
+  "assets": { "directory": "./dist" },
+}

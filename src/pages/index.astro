@@ -3,6 +3,8 @@ import "../styles/global.css";
 import Icon from "../components/Icon.astro";
 import BrandIcon from "../components/BrandIcon.astro";
 import TechnologyIcon from "../components/TechnologyIcon.astro";
+import { analyticsToken } from "../deployment.mjs";
+const cfToken = analyticsToken(process.env.CF_ANALYTICS_TOKEN);
 const technologies = [
   { name: "python", label: "Python" },
   { name: "microsoftsqlserver", label: "SQL Server" },
@@ -116,6 +118,14 @@ const faqs = [
       type="image/png"
       sizes="64x64"
     />
+    {cfToken && (
+      <script
+        is:inline
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={JSON.stringify({ token: cfToken })}
+      ></script>
+    )}
     <link rel="canonical" href={canonicalURL.href} />
     <meta
       property="og:title"

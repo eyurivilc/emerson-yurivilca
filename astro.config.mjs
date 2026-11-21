@@ -1,11 +1,9 @@
-import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+import { deploymentConfig } from "./src/deployment.mjs";
 
 export default defineConfig({
-  site: 'https://eyurivilc.github.io',
-  base: '/emerson-yurivilca',
-  output: 'static',
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  ...deploymentConfig(process.env),
+  output: "static",
+  vite: { plugins: [tailwindcss()] },
 });

@@ -61,3 +61,17 @@ Los datos de la demostración son ficticios. El formulario no almacena datos: pr
 El flujo `.github/workflows/static.yml` despliega en GitHub Pages al recibir un push a `main`; no se ha ejecutado publicación durante esta revisión. `.openai/hosting.json` corresponde al Site de revisión anterior.
 
 **Dependencias pendientes:** la auditoría npm detecta vulnerabilidades en la cadena existente de Astro 5. No se ha aplicado automáticamente una actualización mayor. Revisa `docs/verification.md` antes de ampliar la exposición del servidor o publicar.
+
+## Cloudflare Workers migration (parallel to GitHub Pages)
+
+The default build remains configured for GitHub Pages. For Workers Builds configure:
+
+- Worker name: `emerson-yurivilca` (must match `wrangler.jsonc`).
+- Build command: `npm run build`; deploy command: `npx wrangler deploy`.
+- Build variables: `DEPLOY_TARGET=cloudflare`, `SITE_URL=https://<actual-subdomain>.workers.dev`, and `CF_ANALYTICS_TOKEN=<Cloudflare Web Analytics site token>` once created. The token is public in rendered HTML; never treat it as a secret or use an API token here. Omit it until analytics is configured. Never put secrets in the source.
+- In the Cloudflare dashboard create Web Analytics and use its **site token** (not an API token). This adds the asynchronous Cloudflare beacon to the static HTML only when configured. Measurement may be blocked by browsers/ad blockers. Do not enter contact-form data into analytics.
+- Connect GitHub after explicit account authorization, initially keep GitHub Pages online and verify the `workers.dev` URL, canonical metadata, assets, interaction, analytics reporting and performance. Then change repository visibility and remove the GitHub Pages workflow only after the user accepts the new site. GitHub Free does not provide Pages from private repositories. Historical public copies may persist.
+- Rollback before privatization: retain GitHub Pages deployment and share its original URL; do not disconnect it until Cloudflare is verified.
+- `node --test scripts/deployment.test.mjs` validates target configuration. For a local Cloudflare-shaped build set build variables in your shell then run `npm run build` and `npm run preview`. Do not use a real token in screenshots or output unless appropriate; it is client-visible by design.
+
+References: https://developers.cloudflare.com/workers/framework-guides/web-apps/astro/ and https://developers.cloudflare.com/web-analytics/faq/ and https://developers.cloudflare.com/workers/ci-cd/builds/configuration/.
